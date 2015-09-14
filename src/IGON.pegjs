@@ -21,7 +21,7 @@ SelfClosedTag "self-closed tag"
   }
 
 ParentTag
-  = _ "{" _ tagStart:Ident _ args:Argument* _ "}" _ tags:Tag* _ "{|" tagEnd:Ident _ "}" {
+  = _ "{" _ tagStart:Ident _ args:Argument* _ "}" _ tags:Tag* _ "{|" tagEnd:Ident _ "}" _ {
     if (tagStart !== tagEnd) {
       throw new Error("Unmatched tag {" + tagStart + "}");
     }
